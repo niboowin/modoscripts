@@ -1,11 +1,10 @@
 modoscripts
 ===========
 
-My Modo Scripts
+Always trying to improve my workflow. Suggestions are always welcome.
 
 
-
-ImportJsonTextureAtlas
+###ImportJsonTextureAtlas
 
 Imports a json(Array) file from TexurePacker.
 Create quads and UV's
