@@ -1,11 +1,12 @@
 #python
 import lx
+import os
 import ntpath
 import glob
 
-
 def createQuad(sizeX, sizeY, name):
 	lx.eval("layer.new")
+	lx.eval("material.new {0} true false".format(name))
 	lx.eval("item.name {0}".format(name) )
 	lx.eval("tool.set prim.cube on 0")
 	lx.eval("tool.reset prim.cube")
@@ -20,11 +21,12 @@ def createQuad(sizeX, sizeY, name):
 	lx.eval("tool.doApply") 
 	lx.eval("tool.set prim.cube off")
 	
+	lx.eval("poly.setMaterial {0}".format(name))
+
 	#hacks didn't check to see if I could rotate by a value
 	lx.eval("uv.rotate")
 	lx.eval("uv.rotate")
 	lx.eval("uv.rotate")
-
 
 
 lx.eval("dialog.setup dir");
@@ -36,8 +38,9 @@ ims = lx.service.Image()
 images = glob.glob("{0}/*.png".format(file_path))
 
 for img in images:
+	filename, ext = os.path.splitext(ntpath.basename(img))
 	im = ims.Load(img);
 	width, height = im.Size()
-	createQuad(width, height, ntpath.basename(img) )
+	createQuad(width, height, filename )
 
 
