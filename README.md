@@ -4,7 +4,7 @@ modoscripts
 Always trying to improve my workflow. Suggestions are always welcome.
 
 
-ImportJsonTextureAtlas
+ImportJsonTextureAtlas.py
 ------------------------
 
 Imports a json(Array) file from TexurePacker.
